@@ -1,0 +1,12 @@
+name: 'Packages Digest'
+description: 'Creates a digest from packages (name@version)'
+inputs:
+  packages:
+    description: 'space delimited list of packages (name@version)'
+    required: true
+outputs:
+  digest:
+    description: 'Consistently sorted packages digest'
+runs:
+  using: 'node22'
+  main: 'dist/index.js'
