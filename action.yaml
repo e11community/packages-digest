@@ -8,5 +8,5 @@ outputs:
   digest:
     description: 'Consistently sorted packages digest'
 runs:
-  using: 'node22'
+  using: 'node20'
   main: 'dist/index.js'
