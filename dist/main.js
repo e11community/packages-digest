@@ -38,9 +38,8 @@ const crypto_1 = require("crypto");
 async function run() {
     try {
         const inputPackages = core.getInput('packages', { required: true });
-        const chunks = inputPackages.trim().split(' ');
-        const cleanedPackages = chunks.map(chunk => chunk.trim());
-        const payload = cleanedPackages.sort().join('$');
+        const chunks = inputPackages.trim().split(/s+/).sort();
+        const payload = chunks.join('$');
         const hasher = (0, crypto_1.createHash)('sha256');
         hasher.update(payload);
         const digest = hasher.digest('hex');
